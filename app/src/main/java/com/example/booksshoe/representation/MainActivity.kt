@@ -39,7 +39,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.booksshoe.R
 
 import com.example.booksshoe.data.ProductItem
 import com.example.booksshoe.data.ProductItemX
@@ -49,6 +48,7 @@ import com.example.booksshoe.ui.theme.BooksShoeTheme
 import com.example.booksshoe.utlis.Redit
 import com.example.booksshoe.utlis.Resource
 import com.example.booksshoe.utlis.getProducts
+import com.example.eCommerce.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

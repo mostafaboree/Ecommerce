@@ -47,10 +47,10 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import coil.transform.RoundedCornersTransformation
-import com.example.booksshoe.R
 import com.example.booksshoe.data.ProductItem
 import com.example.booksshoe.data.ProductItemX
 import com.example.booksshoe.ui.theme.BooksShoeTheme
+import com.example.eCommerce.R
 
 @Composable
 fun ItemProduct(product: ProductItemX, onClick: (ProductItem) -> Unit,modifier: Modifier){

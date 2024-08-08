@@ -106,8 +106,8 @@ suspend fun Redit() {
 
 class CacheInterceptor():Interceptor{
     override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
-      val request=chain.request()
-        if ()
-    }
+        val response = chain.proceed(chain.request())
 
+        return TODO("Provide the return value")
+    }
 }
