@@ -1,4 +1,4 @@
-package com.example.booksshoe.representation
+package com.example.booksshoe.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.booksshoe.data.ProductItem
@@ -17,13 +17,9 @@ import javax.inject.Inject
 class ViewModel_Product @Inject constructor(private val useCase: UseCaseProduct):ViewModel () {
  private val product= MutableStateFlow<List<ProductItem>>(emptyList())
     val _product:StateFlow<List<ProductItem>> = product
-
-
+    
    private var state = MutableStateFlow<StateManage<Any>>(StateManage.Loading)
     val _state: StateFlow<StateManage<Any>> = state
-
-
-
 
     private var getProductsJob: Job? = null
 

@@ -3,6 +3,7 @@ package com.example.booksshoe.utlis
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.booksshoe.data.DaoProduct
+import com.example.booksshoe.data.ProductItem
 import com.example.booksshoe.data.ProductItemX
 import com.example.booksshoe.data.products
 import com.example.booksshoe.utlis.HttpRout.BASE_URL
@@ -35,16 +36,16 @@ sealed class StateManage<out T>() {
 
 interface ApiService {
     @GET(PRODUCT)
-    suspend fun getProducts():Response<List<ProductItemX>>
+    suspend fun getProducts():Response<List<ProductItem>>
 }
-val retrofit=Retrofit.Builder().baseUrl("https://api.escuelajs.co/api/v1/").addConverterFactory(GsonConverterFactory.create()).build()
+val retrofit=Retrofit.Builder().baseUrl("https://fakestoreapi.com/").addConverterFactory(GsonConverterFactory.create()).build()
 val api= retrofit.create(ApiService::class.java)
 
 sealed class  Resource<out T>(val data: T? = null,val  message: String? = null) {
     object Loading : Resource<Nothing>()
     class Success<T>( data : T) : Resource<T>(data= data)
     class Error<T>(val e:kotlin.Exception) : Resource<T>(message = Exception().message)
-    class Exception<T>(val error: Throwable) : Resource<T>(message = error.message)
+    class Exception<T>(val error: Throwable) : Resource<T>(message = error.printStackTrace().toString())
 }
 
 
@@ -74,7 +75,7 @@ suspend fun < T:Any>handleApi(execute: suspend () -> Response<T>): Flow<Resource
 }
 
 
-suspend fun getProducts(): Flow<Resource<List<ProductItemX>>> {
+suspend fun getProducts(): Flow<Resource<List<ProductItem>>> {
 
 
 

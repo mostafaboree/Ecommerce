@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.eCommerce"
+    namespace = "com.example.BookShoe"
     compileSdk = 34
 
     defaultConfig {

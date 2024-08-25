@@ -5,28 +5,33 @@
 
     <application
         android:allowBackup="true"
-        android:name=".App.MyApplication"
+        android:name="com.example.booksshoe.App.MyApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/zare"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BooksShoe"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
+            android:name="com.example.booksshoe.MainActivity2"
             android:exported="false"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.BooksShoe" />
+            android:theme="@style/Theme.BooksShoe"
+            tools:ignore="IntentFilterExportedReceiver"/>
         <activity
-            android:name=".representation.MainActivity"
-            android:exported="true">
+            android:name="com.example.booksshoe.presentation.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BooksShoe"
+            tools:ignore="IntentFilterExportedReceiver,WrongManifestParent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
     </application>
 
